@@ -1,9 +1,9 @@
 #Greenfoot properties
-#Tue May 23 21:29:38 CDT 2017
+#Wed May 24 00:50:47 CDT 2017
 target16.name=Jefe2
 dependency35.to=Jefe2
-editor.swing.0.y=-8
-editor.swing.0.x=-8
+editor.swing.0.y=0
+editor.swing.0.x=0
 target2.name=SimpleTimer
 target9.name=BallB
 dependency11.type=UsesDependency
@@ -13,7 +13,7 @@ class.BallB.superclass=Ball
 dependency8.to=Personaje
 class.EnemigoB.superclass=Enemigo
 target14.type=ClassTarget
-simulation.speed=45
+simulation.speed=40
 dependency25.type=UsesDependency
 dependency22.from=Personaje
 target15.width=80
@@ -263,7 +263,7 @@ target4.height=50
 class.BallB.image=EE.png
 dependency34.type=UsesDependency
 dependency31.from=Bomba
-editor.swing.0.height=744
+editor.swing.0.height=700
 target6.showInterface=false
 target15.showInterface=false
 dependency38.from=EnemigoB
@@ -280,7 +280,7 @@ target6.width=80
 dependency47.from=BallA
 readme.width=47
 mainWindow.height=744
-editor.swing.0.width=1382
+editor.swing.0.width=700
 target5.showInterface=false
 target14.showInterface=false
 dependency34.to=Enemigo

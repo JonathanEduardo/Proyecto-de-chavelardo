@@ -61,15 +61,19 @@ public class Personaje extends Actor
         jump();
         direccion();
         CreaBomba();
+      
         
-         if(Greenfoot.getRandomNumber(100) > 98)
+         if(Greenfoot.getRandomNumber(710) > 707)
                 {
                    mundo.CreaVida();
+                   
                 }
                 
            if(isTouching(Vida.class))
         {
+               
                 removeTouching(Vida.class);
+                mundo.incrmentaVida();
         }
        
     }    

@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class MyWorld extends World
 {
-    
+    private int numeroVidas = 3;
     private int marca = 5;  //Variable de n valor para pasar al nivel 2
     private int marca2 = 10; //Variable de n valor para pasar al nivel 3
     private int marca3 = 15; //Variable de n valor para ganar
@@ -42,10 +42,10 @@ public class MyWorld extends World
         super(ancho, altura, 1);
         imagenes = new LinkedList();
         imagenes.add(new GreenfootImage("menu2.jpg"));      //0
-        imagenes.add(new GreenfootImage("Play.png")); //1
+        imagenes.add(new GreenfootImage("control.png")); //1
         imagenes.add(new GreenfootImage("e.png"));//2
-        imagenes.add(new GreenfootImage("help.jpg")); //3            
-        imagenes.add(new GreenfootImage("creditos.jpg")); //4
+        imagenes.add(new GreenfootImage("coyote.png")); //3            
+        imagenes.add(new GreenfootImage("c.png")); //4
         
         
         Start = new Boton(getImagen(1));
@@ -64,9 +64,9 @@ public class MyWorld extends World
     public void menu()
     {
         removeObjects(getObjects(null));
-        addObject(Start, 115, 100);
-        addObject(Help, 400, 400);
-        addObject(Cre, 800, 45);
+        addObject(Start, 400, 150);
+        addObject(Help, 100, 400);
+        addObject(Cre, 650, 490);
         Greenfoot.setSpeed(40);
         setBackground(getImagen(0));
         
@@ -155,7 +155,7 @@ public class MyWorld extends World
         contnivel = new Counter("Nivel:"); //contadores 
         addObject(contnivel,375,altura-10);
         contnivel.setValue(1);
-        contVidas.setValue(30);
+        contVidas.setValue(numeroVidas);
         contPunt = new Counter("Puntos: ");
         addObject(contPunt,750,altura-10);
         contPunt.setValue(0);
@@ -459,7 +459,7 @@ public class MyWorld extends World
      */
     public void ReapareceJugador()
     {
-        addObject(new Personaje(),10,altura-30);
+        addObject(new Personaje(),10,altura-50);
     }
 
     /**
@@ -481,5 +481,10 @@ public class MyWorld extends World
     public void CreaVida()
     {
       addObject(new Vida(),Greenfoot.getRandomNumber(750),Greenfoot.getRandomNumber(600));
+    }
+    
+    public int getVidas()
+    {
+        return contVidas.getValue();
     }
 }
