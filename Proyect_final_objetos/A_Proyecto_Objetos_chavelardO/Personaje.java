@@ -208,7 +208,7 @@ public class Personaje extends Actor
     
     
     /**
-     * 
+     * se crea la vida cada cierta vez 
      */
     private void creaVida()
     {

@@ -78,10 +78,13 @@ comment31.target=void\ CreaBomba(int,\ int)
 comment31.text=\r\n\ Metodo\ que\ crea\ bomba\r\n\ x\ \=\ poscion\ en\ eje\ x\ dada\ por\ la\ poscicion\ del\ jugador\r\n\ y\ \=\ poscion\ en\ eje\ y\ dada\ por\ la\ poscicion\ del\ jugador\r\n
 comment32.params=
 comment32.target=int\ getNivel()
+comment32.text=\r\n\ metodo\ regresa\ nivel\r\n
 comment33.params=
 comment33.target=void\ CreaVida()
+comment33.text=\r\n\ metodo\ que\ crea\ vida\r\n
 comment34.params=
 comment34.target=int\ getVidas()
+comment34.text=\r\n\ metodo\ regresa\ numero\ de\ vidas\r\n
 comment4.params=
 comment4.target=void\ seleccionar()
 comment4.text=\r\n\ M\u00E9todo\ que\ selecciona\ entre\ todos\ los\ botones\ que\ aparescan\r\n\ en\ el\ juegoya\ sea\ el\ de\ salir\ que\ regresa\ al\ men\u00FA,\ el\ de\ start\ manda\ \r\n\ }al\ nivel\ 1,\ help\ manda\ a\ la\ ayuda\ y\ el\ boton\ de\ creditos.\r\n

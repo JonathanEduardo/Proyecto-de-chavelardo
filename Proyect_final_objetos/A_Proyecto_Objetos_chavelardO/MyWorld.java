@@ -20,7 +20,7 @@ import java.util.ArrayList;
  */
 public class MyWorld extends World
 {
-    private int numeroVidas = 500;
+    private int numeroVidas = 3;
     private int marca = 5;  //Variable de n valor para pasar al nivel 2
     private int marca2 = 10; //Variable de n valor para pasar al nivel 3
     private int marca3 = 15; //Variable de n valor para ganar
@@ -490,12 +490,18 @@ public class MyWorld extends World
         addObject(new Bomba(),x,y);
     }
     
-    
+    /**
+     * metodo regresa nivel
+     */
     public int getNivel()
     {
         return contnivel.getValue();
     }
    
+    
+    /**
+     * metodo que crea vida
+     */
     public void CreaVida()
     {
         int x, y;
@@ -508,6 +514,10 @@ public class MyWorld extends World
        }
     }
     
+    
+    /**
+     * metodo regresa numero de vidas
+     */
     public int getVidas()
     {
         return contVidas.getValue();

@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri May 26 22:56:34 CDT 2017
+#Sat May 27 00:36:15 CDT 2017
 target16.name=Jefe2
 dependency35.to=Jefe2
 editor.swing.0.y=-8
@@ -94,7 +94,7 @@ dependency44.from=Vida
 dependency20.to=Personaje
 target14.name=Jefe1
 target9.height=50
-target11.showInterface=false
+target11.showInterface=true
 target2.showInterface=false
 target7.name=EnemigoB
 dependency41.to=Personaje
@@ -280,7 +280,7 @@ target6.width=80
 dependency47.from=BallA
 readme.width=47
 mainWindow.height=744
-editor.swing.0.width=1382
+editor.swing.0.width=1383
 target5.showInterface=false
 target14.showInterface=false
 dependency34.to=Enemigo
