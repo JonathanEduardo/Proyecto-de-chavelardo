@@ -6,4 +6,5 @@ comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Bomba\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ MataJefe()
+comment2.text=\r\n\ Metodo\ que\ valida\ la\ muerte\ del\ jefe\ al\ contacto\ con\ esta\ clase\r\n\ p\ es\ un\ indicador\ de\ puntos\ para\ saber\ cuando\ y\ en\ que\ momento\ poder\ matar\ al\ jefe\r\n\ n\r\n
 numComments=3

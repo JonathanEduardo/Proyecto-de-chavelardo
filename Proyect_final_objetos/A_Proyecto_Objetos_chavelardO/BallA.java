@@ -10,7 +10,9 @@ public class BallA extends Ball
 {   
     private int ban;
     
-    
+    /**
+     * constructor de BallA sin parametros
+     */
     public BallA()
     {
      super();
@@ -18,7 +20,7 @@ public class BallA extends Ball
     }
     
      /**
-     * Balls will move and check if they have hit a brick or paddle or
+     * metodo actua y los metodos mata();
      * one of the edges of the world
      */
     public void act() 
@@ -31,6 +33,10 @@ public class BallA extends Ball
         
    }
     
+   
+   /**
+    * Metodo que herda de ball y que valida como matar al enemigo  como y cada cuando matar uno el incrementar puntos cuando lo mata 
+    */
     public void mata()  // Funcion para matar al los enemigos 
     {
          MyWorld mundo = (MyWorld) getWorld(); 
@@ -88,7 +94,10 @@ public class BallA extends Ball
         
     } 
     
-      public void mata2()  // Funcion para matar al los enemigos 
+    /**
+     * metodo identico al mata() solo que este valida para matar a un enemigo b
+     */
+      private void mata2()  // Funcion para matar al los enemigos 
     {
          MyWorld mundo = (MyWorld) getWorld(); 
          int nivel = mundo.getNivel();

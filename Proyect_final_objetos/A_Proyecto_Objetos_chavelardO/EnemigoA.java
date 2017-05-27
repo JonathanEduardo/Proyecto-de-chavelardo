@@ -22,8 +22,9 @@ public class EnemigoA extends Enemigo
     
      /**
      * Constructor that takes initial values for all fields
-     * @param theVelX   the amount to change in X per act
-     * @param theVelY   the amount to change in Y per act
+     * super llamado a clase padre pasando por parametro nombre de la imagen del enemigo
+     * @param l1 es el limite en eje de las x que indica el limite inicial donde el enemigo camina de lado a lado
+     * @param l2 es el limite en eje de las x que indica el limite final donde el enemigo camina de lado a lado
      */
     public EnemigoA(int l1, int l2)
     {

@@ -33,8 +33,8 @@ public abstract class Ball extends Actor
     
     /**
      * Constructor that takes initial values for all fields
-     * @param theRadius the radius to use
-     * @param theColor  the color to use
+   
+    
      * @param theVelX   the amount to change in X per act
      * @param theVelY   the amount to change in Y per act
      */
@@ -63,6 +63,10 @@ public abstract class Ball extends Actor
        
     }
     
+    
+    /**
+     * Metodo que valida el espacio en el cual se puede mover la pelotita usa las variables ancho y altura comolimites 
+     */
     public void ValidaDimencio()
     {
          MyWorld mundo = (MyWorld) getWorld();
@@ -90,6 +94,11 @@ public abstract class Ball extends Actor
         }
     }
     
+    
+    
+    /**
+     * Este metodo mueve la pelotita
+     */
     public int movimiento()
     { 
         int d=0;
@@ -107,5 +116,9 @@ public abstract class Ball extends Actor
         return d;
     }
     
+    
+    /**
+     * Metdodo abstracto utilizado en BallA y BallB
+     */
     public abstract void mata();
 }

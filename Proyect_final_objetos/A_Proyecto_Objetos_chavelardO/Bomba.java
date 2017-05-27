@@ -17,6 +17,12 @@ public class Bomba extends Actor
        MataJefe();
     }    
     
+    
+    /**
+     * Metodo que valida la muerte del jefe al contacto con esta clase
+     * p es un indicador de puntos para saber cuando y en que momento poder matar al jefe
+     * nivel un indicador para sabe cuando matar a que jefe si no esta este en el nivel 3 sufre un error
+     */
     public void MataJefe()   //Funcion para validar matar al jefe y pasar de nivel
     {
          MyWorld mundo = (MyWorld) getWorld(); 

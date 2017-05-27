@@ -1,3 +1,13 @@
+/**
+ * *************************************************
+ * Autor: Jhonathan Eduardo Quistiano Henrnadez    *
+ * Nombre de juego: Chabelardo                     *
+ * Fecha: 5/26/2017                                *
+ * Lenguaje: Java                                  *
+ * *************************************************
+ */
+
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.LinkedList;
 import java.util.ArrayList;
@@ -10,7 +20,7 @@ import java.util.ArrayList;
  */
 public class MyWorld extends World
 {
-    private int numeroVidas = 3;
+    private int numeroVidas = 500;
     private int marca = 5;  //Variable de n valor para pasar al nivel 2
     private int marca2 = 10; //Variable de n valor para pasar al nivel 3
     private int marca3 = 15; //Variable de n valor para ganar
@@ -20,6 +30,7 @@ public class MyWorld extends World
     private int contMuer;       //contador de muertes
     private Counter contnivel;//contador de puntos
     private ArrayList<BallB> balls= new ArrayList<BallB>();
+     private ArrayList<Vida> vidas= new ArrayList<Vida>();
     private Personaje pers;
     private EnemigoA ene;
     private Boton Start, Salir, Help, Cre;
@@ -141,7 +152,7 @@ public class MyWorld extends World
       
         setBackground("Nivel1.jpg");
         //Greenfoot.playSound("Sonido1.wav"); 
-        addObject(new Personaje(),300,420);
+        addObject(new Personaje(),37,552);
         addObject(new BallB(), ancho/2, altura/2);
         balls.add(new BallB());
         addObject(new BallA(), 200, altura/2);
@@ -171,11 +182,13 @@ public class MyWorld extends World
       
         removeObjects(getObjects(null));
         balls.clear();
+        vidas.clear();
         setBackground("Nivel2.jpg");
         addObject(new BallB(), ancho/2, altura/2);
+         addObject(new BallB(), ancho/2, altura/2);
         balls.add(new BallB());
         addObject(new BallA(), 200, altura/2);
-        addObject(new Personaje(),300,420);
+        addObject(new Personaje(),37,552);
         addObject(new Jefe2(0,700,"Jefe2-1.png","Jefe2-2.png"),350,70);
         GeneraPlataformas();
         Greenfoot.setSpeed(45);
@@ -190,11 +203,14 @@ public class MyWorld extends World
     {
         removeObjects(getObjects(null));
         balls.clear();
+        vidas.clear();
         setBackground("Nivel3.jpg");
         addObject(new BallB(), ancho/2, altura/2);
+         addObject(new BallB(), ancho/3, altura/4);
+          addObject(new BallB(), ancho/4, altura/3);
         balls.add(new BallB());
         addObject(new BallA(), 200, altura/2);
-        addObject(new Personaje(),300,420);
+        addObject(new Personaje(),37,552);
         addObject(new Jefe1(0,700,"Jefe1-1.png","Jefe1-2.png"),5,70);
         addObject(new Jefe2(0,700,"Jefe2-1.png","Jefe2-2.png"),795,70);
         GeneraPlataformas();
@@ -223,11 +239,11 @@ public class MyWorld extends World
     public void GeneraPlataformas()
    {
       
-       //Piso
-       addObject(new PlataA(),112,altura -15);
-       addObject(new PlataA(),340,altura -15);
-       addObject(new PlataA(),568,altura -15);
-       addObject(new PlataA(),690,altura -15);
+      //Piso
+       addObject(new PlataA(),112,altura -20);
+       addObject(new PlataA(),340,altura -20);
+       addObject(new PlataA(),568,altura -20);
+       addObject(new PlataA(),690,altura -20);
        
        //Creacion de los enemigos y sus respectivas plataformas
        addObject(new PlataA(),382,544);
@@ -238,14 +254,16 @@ public class MyWorld extends World
        addObject(new EnemigoB(66,246),76,433);
        addObject(new PlataA(),431,425);
        addObject(new EnemigoA(341,521),451,385);
-       addObject(new PlataA(),156,387);
-       addObject(new EnemigoA(66,246),86,347);  
+       
+       addObject(new PlataA(),156,358);////
+       addObject(new EnemigoA(66,246),86,322);  
+       
        addObject(new PlataA(),656,343);
        addObject(new EnemigoA(576,746),586,303);
        addObject(new PlataA(),415,268);
        addObject(new EnemigoB(325,505),400,228); 
        addObject(new PlataA(),144,209);
-       addObject(new EnemigoA(54,234),220,59);
+       addObject(new EnemigoA(54,234),220,170);
        addObject(new PlataA(),676,193);
        addObject(new EnemigoA(586,766),590,153);
        
@@ -480,7 +498,14 @@ public class MyWorld extends World
    
     public void CreaVida()
     {
-      addObject(new Vida(),Greenfoot.getRandomNumber(750),Greenfoot.getRandomNumber(600));
+        int x, y;
+        x = Greenfoot.getRandomNumber(750);
+        y = Greenfoot.getRandomNumber(580);
+        
+        if( y > 130 && vidas.size()<2){
+            addObject(new Vida(),x,y);
+            vidas.add(new Vida());
+       }
     }
     
     public int getVidas()

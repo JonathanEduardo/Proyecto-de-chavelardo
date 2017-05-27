@@ -14,16 +14,21 @@ public class EnemigoB extends Enemigo
     private int l2;
     private int ban;
     
-    
+    /**
+     * Constructor  de la clase enemigoB sin parametros
+     *  super llamado a clase padre pasando por parametro nombre de la imagen del enemigo
+     */
     public EnemigoB()
     {
         super("Lex1.png","Lex2.png","Lex3.png","Lex4.png");
     }
     
+    
      /**
-     * Constructor that takes initial values for all fields
-     * @param theVelX   the amount to change in X per act
-     * @param theVelY   the amount to change in Y per act
+     * Constructor 2 
+     *  super llamado a clase padre pasando por parametro nombre de la imagen del enemigo
+     * @param l1 es el limite en eje de las x que indica el limite inicial donde el enemigo camina de lado a lado
+     * @param l2 es el limite en eje de las x que indica el limite final donde el enemigo camina de lado a lado
      */
     public EnemigoB(int l1, int l2)
     {
@@ -45,6 +50,12 @@ public class EnemigoB extends Enemigo
          
     }
     
+    
+    
+    /**
+     * Metetodo utilizado para matar a Personaje 
+     * @param mundo cast para acceder a metodos de Mywordl
+     */
     public void mata()
     {
          MyWorld mundo = (MyWorld) getWorld(); 

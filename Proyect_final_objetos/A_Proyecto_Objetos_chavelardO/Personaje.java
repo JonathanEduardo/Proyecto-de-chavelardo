@@ -20,6 +20,11 @@ public class Personaje extends Actor
    private GreenfootImage imagen4;
     //private String sound;
    
+    
+     /**
+     * Constructor con parametros para definir la velocidad del jugador
+     * imagen es el nombre de las imagenes para dar efecto de correr
+     */
     public Personaje()
     {
         imagen1 = new GreenfootImage("Jugador1D.jpg");
@@ -36,16 +41,17 @@ public class Personaje extends Actor
     }
     
     /**
-     * Constructor that takes initial values for all fields
+     * Constructor con parametros para definir la velocidad del jugador
      * @param theVelX   the amount to change in X per act
      * @param theVelY   the amount to change in Y per act
+     * imagen es el nombre de las imagenes para dar efecto de correr
      */
     public Personaje(int theVelX, int theVelY)
     {
-        imagen1 = new GreenfootImage("soni.png");
-        imagen2 = new GreenfootImage("soni3.png");
-        imagen1 = new GreenfootImage("soni2.png");
-        imagen2 = new GreenfootImage("soni4.png");
+        imagen1 = new GreenfootImage("Jugador1D.jpg");
+        imagen2 = new GreenfootImage("Jugador2D.png");
+        imagen3 = new GreenfootImage("Jugador1I.png");
+        imagen4 = new GreenfootImage("Jugador2I.png");
         velX = 1;
         velY = 1;
     }
@@ -56,29 +62,23 @@ public class Personaje extends Actor
      */
     public void act() 
     {
-         MyWorld mundo = (MyWorld) getWorld();
+         
         mantenimientoPlataforma();
         jump();
         direccion();
         CreaBomba();
       
+        creaVida();
         
-         if(Greenfoot.getRandomNumber(710) > 707)
-                {
-                   mundo.CreaVida();
-                   
-                }
-                
-           if(isTouching(Vida.class))
-        {
-               
-                removeTouching(Vida.class);
-                mundo.incrmentaVida();
-        }
+        
        
     }    
     
-    public int validaBall() //envia la validacion a world
+    
+    /**
+     * Valida si ha tocado la BallA esto sirve para validar las muertes del enemigo
+     */
+    private int validaBall() //envia la validacion a world
     {
         if(isTouching(BallA.class))
         {
@@ -88,7 +88,13 @@ public class Personaje extends Actor
         return 0;
     }
     
-    public int movimiento()
+    
+    
+    /**
+     * Metdo que permite moverte de izq a der.
+     * d  es una variable que indica hacia donde esta en movimiento si es 1 es izq si es 2 es derecha y eso lo enviamos a el metodo ilicionCorrer 
+     */
+    private int movimiento()
     { 
         int d=0;
         if(Greenfoot.isKeyDown("left"))
@@ -105,7 +111,11 @@ public class Personaje extends Actor
         return d;
     }
     
-    public void mantenimientoPlataforma()
+    
+    /**
+     * Mantiene al personeje en la plataforma
+     */
+    private void mantenimientoPlataforma()
     {
          if (!isTouching(PlataA.class))
         {
@@ -113,7 +123,11 @@ public class Personaje extends Actor
         }
     }
     
-   public void jump()
+    
+    /**
+     * hace brimcar al jugador
+     */
+   private void jump()
     {
         if(isTouching(PlataA.class))
         {
@@ -125,8 +139,10 @@ public class Personaje extends Actor
     }
     }
     
-   
-    public void ilucionCorrerD()
+   /**
+    * crea la ilucion de correr a la derecha
+    */
+    private void ilucionCorrerD()
     {
         if(getImage()==imagen1)//get image regresa la imagen que esta actualmete
         {
@@ -137,7 +153,11 @@ public class Personaje extends Actor
         }
     }
     
-    public void direccion()
+    
+    /**
+     * manda llmar la ilucion de correr 
+     */
+    private void direccion()
     {
         int dire;
         
@@ -150,7 +170,10 @@ public class Personaje extends Actor
        }
     }
     
-    public void ilucionCorrerI()
+    /**
+     * crea la ilucion de correr a la izquierda
+     */
+    private void ilucionCorrerI()
     {
         if(getImage()==imagen3)//get image regresa la imagen que esta actualmete
         {
@@ -161,7 +184,11 @@ public class Personaje extends Actor
         }
     }
     
-     public void CreaBomba()
+    
+    /**
+     * Crea bomba con la tecla "s" y define coordenadas de donde poder crearla en un espacio definido
+     */
+     private void CreaBomba()
     {
          MyWorld mundo = (MyWorld) getWorld();
         //setLocation(getX() + velX, getY() + velY);
@@ -177,6 +204,26 @@ public class Personaje extends Actor
         }
         }
     
+    }
+    
+    
+    /**
+     * 
+     */
+    private void creaVida()
+    {
+        MyWorld mundo = (MyWorld) getWorld();
+         if(Greenfoot.getRandomNumber(710) > 708)
+                {
+                   mundo.CreaVida();
+                   
+                }
+           if(isTouching(Vida.class))
+        {
+               
+                removeTouching(Vida.class);
+                mundo.incrmentaVida();
+        }
     }
     
   }

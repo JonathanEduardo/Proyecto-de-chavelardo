@@ -25,7 +25,7 @@ public class BallB extends Ball
          
     }
     
-    public void mata()
+   public void mata()
     {
          MyWorld mundo = (MyWorld) getWorld(); 
         
