@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * Write a description of class Space here.
  * 
- * @author (your name) 
+ * @author (Jhonathan Eduardo Quistiano Hernandez) 
  * @version (a version number or a date)
  */
 public class MyWorld extends World
