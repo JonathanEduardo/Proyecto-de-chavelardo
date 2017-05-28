@@ -127,7 +127,7 @@ public class MyWorld extends World
     {
         removeObjects(getObjects(null));
 
-        GreenfootImage hp = new GreenfootImage("ayuda.jpg");
+        GreenfootImage hp = new GreenfootImage("aiuda.jpg");
         setBackground(hp);
         addObject(Salir,740,580);  
     }
@@ -139,7 +139,7 @@ public class MyWorld extends World
     {
         removeObjects(getObjects(null));
 
-        GreenfootImage hp = new GreenfootImage("ImaCre2.jpg");
+        GreenfootImage hp = new GreenfootImage(".jpg");
         setBackground(hp);
         addObject(Salir,740,580);  
     }
@@ -315,8 +315,9 @@ public class MyWorld extends World
     public void muere()
     {
         removeObjects(getObjects(null));
+        removeObjects(getObjects(null));
         //ban=1;
-        GreenfootImage pe = new GreenfootImage("Perdiste.jpg");
+        GreenfootImage pe = new GreenfootImage("perder.jpg");
         setBackground(pe);
         addObject(Salir,740,450);
     }
