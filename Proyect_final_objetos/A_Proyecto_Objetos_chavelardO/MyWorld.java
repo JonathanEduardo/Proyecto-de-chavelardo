@@ -139,7 +139,7 @@ public class MyWorld extends World
     {
         removeObjects(getObjects(null));
 
-        GreenfootImage hp = new GreenfootImage(".jpg");
+        GreenfootImage hp = new GreenfootImage("fondocre.jpg");
         setBackground(hp);
         addObject(Salir,740,580);  
     }
@@ -191,7 +191,7 @@ public class MyWorld extends World
         addObject(new Personaje(),37,552);
         addObject(new Jefe2(0,700,"Jefe2-1.png","Jefe2-2.png"),350,70);
         GeneraPlataformas();
-        Greenfoot.setSpeed(45);
+        Greenfoot.setSpeed(48);
         contadores();
        
     }
@@ -214,7 +214,7 @@ public class MyWorld extends World
         addObject(new Jefe1(0,700,"Jefe1-1.png","Jefe1-2.png"),5,70);
         addObject(new Jefe2(0,700,"Jefe2-1.png","Jefe2-2.png"),795,70);
         GeneraPlataformas();
-        Greenfoot.setSpeed(45);
+        Greenfoot.setSpeed(51);
        contadores();
        
        
